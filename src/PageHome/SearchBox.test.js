@@ -8,9 +8,3 @@ it('renders search button', () => {
   const el = screen.getByText('Search');
   expect(el).toBeInTheDocument();
 });
-
-it('uses props as default value for textbox', () => {
-  render(<StateContextProvider><MemoryRouter><SearchBox keywords='something' /></MemoryRouter></StateContextProvider>);
-  const el = screen.getByDisplayValue('something');
-  expect(el).toBeInTheDocument();
-});

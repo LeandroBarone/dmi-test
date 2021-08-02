@@ -1,34 +1,35 @@
 import { useRef, useContext, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { StateContext } from '../StateContext/StateContext';
 import { searchShows } from '../Api/Api';
 import './SearchBox.css';
 
-export default function SearchBox(props) {
+export default function SearchBox() {
+  const { paramKeywords } = useParams();
   const history = useHistory();
   const textbox = useRef(null);
-  const [ state, dispatch ] = useContext(StateContext);
+  const [ globalState, setGlobalState ] = useContext(StateContext);
 
   const doSearch = (keywords) => {
-    if (state.keywords === keywords) return;
+    if (globalState.keywords === keywords) return;
     
     if (!keywords) {
-      dispatch({keywords: keywords, shows: []});
+      setGlobalState({keywords: keywords, shows: []});
       return;
     }
 
-    dispatch({ isLoading: true, keywords });
+    setGlobalState({ isLoading: true, keywords });
     searchShows(keywords)
     .then(data => {
-      dispatch({isLoading: false, shows: data});
+      setGlobalState({isLoading: false, shows: data});
     })
     .catch(e => {
-      dispatch({isLoading: false, error: e});
+      setGlobalState({isLoading: false, error: e});
       console.log(e);
     });
   }
 
-  useEffect(() => doSearch(props.keywords));
+  useEffect(() => doSearch(paramKeywords));
   
   const handleSubmit = ev => {
     ev.preventDefault();
@@ -37,7 +38,7 @@ export default function SearchBox(props) {
 
   return (
     <form className="searchbox mb-4" onSubmit={ handleSubmit } data-testid="SearchBox">
-      <input className="searchbox__input" placeholder="Search TV show by title" ref={ textbox } defaultValue={ props.keywords } />
+      <input className="searchbox__input" placeholder="Search TV show by title" ref={ textbox } defaultValue={ paramKeywords } />
       <button type="submit" className="searchbox__btn">Search</button>
     </form>
   );

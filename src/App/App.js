@@ -12,8 +12,8 @@ export default function App() {
         <MainHeader />
         <main className="p-4">
           <Switch>
-            <Route path="/details/:show_id" component={ PageDetails } />
-            <Route path="/:keywords?" component={ PageHome } />
+            <Route path="/details/:paramShowId" component={ PageDetails } />
+            <Route path="/:paramKeywords?" component={ PageHome } />
           </Switch>
         </main>
         <MainFooter />

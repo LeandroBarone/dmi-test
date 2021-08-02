@@ -78,6 +78,6 @@ it('renders status', () => {
 
 it('renders picture gallery', () => {
   render(<StateContextProvider><MemoryRouter><ShowDetails show = { show } /></MemoryRouter></StateContextProvider>);
-  const el = screen.getByAltText('Show picture');
+  const el = screen.getByTestId('ImageGallery');
   expect(el).toBeInTheDocument();
 });

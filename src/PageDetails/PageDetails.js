@@ -6,31 +6,29 @@ import ShowDetails from './ShowDetails';
 import Spinner from '../Spinner/Spinner';
 
 export default function PageDetails() {
-  const { show_id } = useParams();
-  const [ state, dispatch ] = useContext(StateContext);
+  const { paramShowId } = useParams();
+  const [ globalState, setGlobalState ] = useContext(StateContext);
 
-  function doSearch(show_id) {
-    if (state.show_id === show_id) return;
+  function doSearch(showId) {
+    if (globalState.showId === showId) return;
 
-    dispatch({ isLoading: true, show_id });
-    getShow(show_id)
+    setGlobalState({ isLoading: true, showId });
+  
+    getShow(showId)
     .then(data => {
-      dispatch({isLoading: false, show: data});
+      setGlobalState({isLoading: false, show: data});
     })
     .catch(e => {
-      dispatch({isLoading: false, error: e});
+      setGlobalState({isLoading: false, error: e});
       console.log(e);
     });
   }
 
-  useEffect(() => {
-    if (show_id !== state.show_id)
-      doSearch(show_id);
-  });
+  useEffect(() => doSearch(paramShowId));
 
-  if (state.isLoading || !state.show) return (<Spinner />);
+  if (globalState.isLoading || !globalState.show) return (<Spinner />);
 
   return (
-    <ShowDetails show={ state.show } linkBack={ (state.keywords) ? '/' + state.keywords : '/' } />
+    <ShowDetails show={ globalState.show } linkBack={ (globalState.keywords) ? '/'+globalState.keywords : '/' } />
   )
 }
