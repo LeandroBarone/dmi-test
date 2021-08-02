@@ -1,8 +1,8 @@
 # React exercize for DMI
 
-This project was created by Leandro Barone as an exercize for DMI with TVMaze's public API.
+⭐ **Live demo available here:** [https://dmi-test-84db0.web.app/](https://dmi-test-84db0.web.app/)⭐
 
-Live demo available here: [https://dmi-test-84db0.web.app/](https://dmi-test-84db0.web.app/)
+This project was created by Leandro Barone as an exercize for DMI with TVMaze's public API.
 
 ## Available Scripts
 
