@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import ImageGallery from './ImageGallery';
+import './ShowDetails.css';
 
 export default function ShowDetails(props) {
 	const linkBack = (props.linkBack) ? props.linkBack : '/';
@@ -23,7 +24,7 @@ export default function ShowDetails(props) {
 	return (
 		<Container>
 			<Row>
-				<Col className="mb-3"><Link to={ linkBack }>&laquo; Go back</Link></Col>
+				<Col className="linkBack mb-3"><Link to={ linkBack }>&laquo; Go back</Link></Col>
 			</Row>
 			<Row>
 				<Col md="3">

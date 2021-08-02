@@ -1,0 +1,7 @@
+.linkBack {
+	color: red;
+}
+
+.linkBack:hover {
+	text-decoration: underline;
+}
