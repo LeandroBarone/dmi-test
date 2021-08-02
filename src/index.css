@@ -1,0 +1,17 @@
+body {
+  min-height: 100vh;
+  background-image: url('./_media/bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: #eef;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}

@@ -1,0 +1,15 @@
+.imagegallery {
+	display: inline-flex;
+	flex-wrap: wrap;
+	grid-gap: 0.5rem;
+}
+
+.imagegallery__img {
+	height: 15vh;
+	transition: filter 300ms, transform 300ms;
+}
+
+.imagegallery__img:hover {
+	filter: brightness(1.5);
+	transform: scale(1.2);
+}

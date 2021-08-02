@@ -1,0 +1,7 @@
+.mainheader {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mainheader__logo {
+	height: 5vh;
+}

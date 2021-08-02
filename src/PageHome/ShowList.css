@@ -1,0 +1,22 @@
+.showlist {
+	display: inline-flex;
+	flex-wrap: wrap;
+	grid-gap: 2rem;
+}
+
+.showlist__name {
+	max-width: 200px;
+	text-align: center;
+}
+
+.showlist__img {
+	display: block;
+	height: 40vh;
+	margin-bottom: 0.5rem;
+	transition: filter 300ms, transform 300ms;
+}
+
+.showlist__thumbnail:hover .showlist__img {
+	filter: brightness(1.5);
+	transform: scale(1.05);
+}
