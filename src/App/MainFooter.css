@@ -1,11 +1,11 @@
 .mainfooter {
-	color: #999;
+  color: #999;
 }
 
 .mainfooter a {
-	color: red;
+  color: red;
 }
 
 .mainfooter a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }

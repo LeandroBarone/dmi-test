@@ -5,13 +5,13 @@ import SearchResults from './SearchResults';
 import { StateContext } from '../StateContext/StateContext';
 
 export default function PageHome() {
-	const { keywords } = useParams();
-	const [ state ] = useContext(StateContext);
+  const { keywords } = useParams();
+  const [ state ] = useContext(StateContext);
 
-	return (
-		<section data-testid="PageHome">
-			<SearchBox keywords={ keywords } />
-			<SearchResults state={ state } />
-		</section>
-	)
+  return (
+    <section data-testid="PageHome">
+      <SearchBox keywords={ keywords } />
+      <SearchResults state={ state } />
+    </section>
+  )
 }

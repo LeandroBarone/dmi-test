@@ -1,31 +1,31 @@
 .searchbox {
-	display: flex;
-	border-radius: 0.5rem;
-	background-color: white;
-	padding: 1rem;
-	padding-left: 1.5rem;
+  display: flex;
+  border-radius: 0.5rem;
+  background-color: white;
+  padding: 1rem;
+  padding-left: 1.5rem;
 }
 
 .searchbox__input {
-	flex-grow: 1;
-	padding: 0;
-	border: none;
-	outline: none;
+  flex-grow: 1;
+  padding: 0;
+  border: none;
+  outline: none;
 }
 
 .searchbox__btn {
-	padding: 0.4rem 1rem;
-	background: red;
-	border: none;
-	border-radius: 0.5rem;
-	color: white;
-	font-size: small;
+  padding: 0.4rem 1rem;
+  background: red;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: small;
 }
 
 .searchbox__btn:hover {
-	opacity: 0.7;
+  opacity: 0.7;
 }
 
 .searchbox__btn:active {
-	opacity: 1;
+  opacity: 1;
 }
